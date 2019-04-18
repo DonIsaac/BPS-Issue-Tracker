@@ -1,0 +1,56 @@
+{
+  "name": "Issue-Capture-Tool",
+  "version": "1.0.0",
+  "description": "Issue/feedback capture user interface that can adapt with any issue tracking platform.",
+  "main": "index.js",
+  "author": "Donald Isaac <donald.isaac@gmail.com>",
+  "license": "SEE LICENSE IN LICENSE",
+  "keywords": [
+    "feedback",
+    "user interface"
+  ],
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "build": "webpack --env.NODE_ENV=prod",
+    "start": "webpack-dev-server --env.NODE_ENV=dev --progress --debug --config ./webpack.config.ts",
+    "test": "jest",
+    "test:watch": "npm run test -- --watch",
+    "workbench": "start-storybook -p 9001"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "<rootDir>/preprocessor.js"
+    },
+    "testRegex": "/__tests__/.*\\.(ts|tsx|js)$"
+  },
+  "devDependencies": {
+    "@kadira/storybook": "2.35.3",
+    "@types/jest": "22.1.3",
+    "@types/node": "^11.13.0",
+    "@types/webpack": "3.8.8",
+    "html-webpack-plugin": "2.30.1",
+    "jest": "22.3.0",
+    "preact-compat": "3.18.0",
+    "ts-loader": "3.5.0",
+    "ts-node": "4.1.0",
+    "tslint": "5.9.1",
+    "tslint-loader": "3.5.3",
+    "typescript": "2.7.2",
+    "webpack": "3.11.0",
+    "webpack-dev-server": "2.11.1"
+  },
+  "dependencies": {
+    "dexie": "2.0.4",
+    "preact": "8.2.7",
+    "preact-shadow-root": "1.0.2",
+    "tslib": "1.9.0",
+    "ulog": "^1.1.0"
+  }
+}
