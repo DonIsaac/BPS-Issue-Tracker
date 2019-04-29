@@ -11,8 +11,8 @@ import { PublisherComponent } from '../management/registry';
 
 export class Sidebar extends PublisherComponent {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
 
   handleIssueClick(e) {

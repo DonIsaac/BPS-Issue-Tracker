@@ -29,7 +29,7 @@ class FeedbackOption extends Component<any, any> {
 export class NewFeedbackOverlay extends PublisherComponent {
 
   constructor(props) {
-    super();
+    super(props);
     this.state.selected = 'elem-feedback';
     this.state.id = 'new-feedback';
   }

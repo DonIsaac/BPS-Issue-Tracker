@@ -2,8 +2,8 @@ import { Component } from 'preact';
 
 /**
  * Stores a map of subscribers and observers and handles all event emissions and
- * listener functions. This class is effectively a centralized version of the
- * Observer pattern.
+ * listener functions. This class is effectively an implementation of the
+ * Publisher/Subscriber design pattern.
  *
  * Components should never directly interface with the `CentralRegistry`; they
  * should instead extend the `EventComponent` class and use the interface
@@ -88,12 +88,16 @@ export class CentralRegistry {
 
 }
 
+/**
+ * Parent class for all widget Components. Contains logic for interacting with
+ * the CentralRepository.
+ */
 export abstract class PublisherComponent extends Component<any, any> {
 
   private events: String[];
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.events = [];
   }
 
@@ -126,7 +130,7 @@ export abstract class PublisherComponent extends Component<any, any> {
    * Unsubscribes this object from the specified `event`. If no `event` is
    * specified, this object is unsubscribed from all events.
    *
-   * @param event
+   * @param event         The event to unsubscribe from
    */
   protected unsubscribe(event?: string) {
     if (event == null) {

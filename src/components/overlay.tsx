@@ -10,7 +10,7 @@ import Shadow from 'preact-shadow-root';
 export class Overlay extends PublisherComponent {
 
   constructor(props) {
-    super();
+    super(props);
 
     /* Initialize component state */
     this.state.hidden = true;
