@@ -44,8 +44,11 @@ export class NewFeedbackOverlay extends PublisherComponent {
     // this.publish('OVERLAY_SIG_HIDE', this.state.id);
   }
 
+  handleClickOnSettings(e: MouseEvent) {
+    this.publish('SETTINGS_SIG_DISPLAY');
+  }
+
   render(props?: any, state?: any, context?: any): JSX.Element {
-    console.log('reee');
     return (
       <Overlay id={state.id}>
         <div>
@@ -85,6 +88,10 @@ export class NewFeedbackOverlay extends PublisherComponent {
             selected={this.state.selected}
             handleClick={this.handleClickOnPageFeedback.bind(this)}
           >[+]</FeedbackOption>
+          <FeedbackOption id="settings"
+            selected={this.state.selected}
+            handleClick={this.handleClickOnSettings.bind(this)}
+          ><span class="fas fa-cogs"></span></FeedbackOption>
           </ul>
         </div>
       </Overlay>

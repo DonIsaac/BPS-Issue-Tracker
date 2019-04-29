@@ -19,11 +19,11 @@ export class Sidebar extends PublisherComponent {
     this.publish('OVERLAY_SIG_SHOW');
   }
 
-  render({}, {}) {
+  render({ }, { }) {
     return (
       <Shadow>
         <div>
-        <style>{`
+          <style>{`
           .sidebar {
             background-color: #DDD;
             padding: .5em;
@@ -43,11 +43,11 @@ export class Sidebar extends PublisherComponent {
             background-color: #0B0;
           }
         `}</style>
-        <div class="tracker sidebar">
-          <div class="tracker btn-new-issue" onClick={ e => this.publish('OVERLAY_SIG_SHOW')}>
-            <strong>+</strong>
+          <div class="tracker sidebar">
+            <div class="tracker btn-new-issue" onClick={e => void this.publish('OVERLAY_SIG_SHOW')}>
+              <strong>+</strong>
+            </div>
           </div>
-        </div>
         </div>
       </Shadow>
     );

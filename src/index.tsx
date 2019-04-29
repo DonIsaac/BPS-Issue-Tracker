@@ -26,9 +26,18 @@ overlayWrapper.setAttribute('id', 'tracker-ui-overlay');
 overlayWrapper.setAttribute('style', ' padding: 2.5em; margin: 0 auto; width: 80%;');
 document.body.appendChild(overlayWrapper);
 
+/* Add FontAwesome to the page */
+let fontAwesome = document.createElement('link');
+fontAwesome.setAttribute('rel', 'stylesheet');
+fontAwesome.setAttribute('href', 'https://use.fontawesome.com/releases/v5.8.1/css/all.css');
+fontAwesome.setAttribute('crossorigin', 'anonymous');
+fontAwesome.setAttribute('integrity', 'sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf');
+overlayWrapper.appendChild(fontAwesome);
+
 /* Close all overlays when the Escape key is pressed */
 window.addEventListener('keydown', e => {
   if (e.code === 'Escape')
+    // @ts-ignore
     window._tracker.registry.notify(this, 'OVERLAY_SIG_HIDE');
 });
 
